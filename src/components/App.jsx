@@ -12,7 +12,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="main-container">
       <Header></Header>
       <Note onAddItem={addItem}></Note>
 

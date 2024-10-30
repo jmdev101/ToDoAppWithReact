@@ -5,7 +5,13 @@
 body {
   margin: 0;
   padding: 0;
+  position: relative;
   min-height: 100vh;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
 }
 
 header {
@@ -21,6 +27,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 2rem;
   text-align: center;
 }
 
@@ -34,4 +41,18 @@ textarea {
   flex-direction: column;
   width: 25%;
   gap: 12px;
+}
+
+.notes-container {
+  word-wrap: break-word;
+  width: 25%;
+  padding: 10px 20px;
+}
+
+.note h2 {
+  margin: 10px 0;
+}
+
+.main-container {
+  padding-bottom: 30px;
 }
