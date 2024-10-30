@@ -18,11 +18,16 @@ function App() {
     setSelected({ id, title, content });
   }
 
+  function deleteItem(id) {
+    setListItems(listItems.filter((list, index) => index !== id));
+    setSelected({ id: "", title: "", content: "" });
+  }
+
   return (
     <div className="main-container">
       <Header></Header>
 
-      <SelectedNote id={selected.id} title={selected.title} content={selected.content}></SelectedNote>
+      <SelectedNote id={selected.id} title={selected.title} content={selected.content} onDeleteItem={deleteItem}></SelectedNote>
 
       <Note onAddItem={addItem}></Note>
 

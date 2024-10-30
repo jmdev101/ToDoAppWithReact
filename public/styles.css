@@ -76,4 +76,11 @@ textarea {
   float: right;
   width: 75%;
   word-wrap: break-word;
+  padding: 0 20px;
+  border-left: 1px solid black;
+  height: calc(100vh - 37px);
+}
+
+.selected-container p {
+  line-height: 2rem;
 }
