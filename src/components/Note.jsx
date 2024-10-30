@@ -10,11 +10,17 @@ function Note(props) {
   }
 
   return (
-    <div className="note-container">
+    <form
+      className="note-container"
+      onSubmit={(e) => {
+        props.onAddItem(note, e);
+        setNote({ title: "", content: "" });
+      }}
+    >
       <input type="text" name="title" placeholder="Title" onChange={handleNote} value={note.title}></input>
-      <textarea name="content" placeholder="Content" onChange={handleNote} value={note.content}></textarea>
-      <button onClick={() => props.onAddItem(note)}>Add</button>
-    </div>
+      <textarea required name="content" placeholder="Content" onChange={handleNote} value={note.content}></textarea>
+      <button>Add</button>
+    </form>
   );
 }
 

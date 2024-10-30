@@ -2,7 +2,13 @@ import React from "react";
 
 function List(props) {
   return (
-    <div className="notes-container">
+    <div
+      className="notes-container"
+      style={{ cursor: "pointer" }}
+      onClick={() => {
+        props.onSelectItem(props.id, props.title, props.content);
+      }}
+    >
       <ul>
         <div className="note">
           <h2>{props.title}</h2>
