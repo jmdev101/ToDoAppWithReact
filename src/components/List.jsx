@@ -4,7 +4,7 @@ function List(props) {
   return (
     <div
       className="notes-container"
-      style={{ cursor: "pointer" }}
+      style={{ cursor: "pointer", backgroundColor: props.id === props.selectedId ? "lightgray" : "white" }}
       onClick={() => {
         props.onSelectItem(props.id, props.title, props.content);
       }}
