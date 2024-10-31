@@ -5,8 +5,8 @@ function SelectedNote(props) {
     <div className="selected-container">
       {props.selectedBoolean ? (
         <div>
-          <input type="text" name="title" placeholder="Title"></input>
-          <textarea required name="content" placeholder="Content"></textarea>
+          <input type="text" name="title" defaultValue={props.title} onChange={(e) => props.onEditNote(e)}></input>
+          <textarea required name="content" defaultValue={props.content} onChange={(e) => props.onEditNote(e)}></textarea>
         </div>
       ) : (
         <div>
@@ -18,10 +18,10 @@ function SelectedNote(props) {
       {props.content ? (
         <div>
           {props.selectedBoolean ? (
-            <button>Save</button>
+            <button onClick={() => props.onSaveEdit(props.id)}>Save</button>
           ) : (
             <div>
-              <button onClick={(e) => props.onEditItem(e)}>Edit</button>
+              <button onClick={() => props.onEditItem()}>Edit</button>
               <button onClick={() => props.onDeleteItem(props.id)}>Delete</button>
             </div>
           )}

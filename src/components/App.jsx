@@ -25,16 +25,33 @@ function App() {
     setSelected({ id: "", title: "", content: "" });
   }
 
-  function editItem(e) {
+  function editItem() {
     setSelectedBoolean(true);
-    // setListItems(listItems.map(list => {list.id === id ?  : listItems));
+  }
+
+  function editNote(e) {
+    setSelected({ ...selected, [e.target.name]: e.target.value });
+  }
+
+  function saveEdit(id) {
+    setListItems(listItems.map((list, index) => (index === id ? selected : list)));
+    setSelectedBoolean(false);
   }
 
   return (
     <div className="main-container">
       <Header></Header>
 
-      <SelectedNote id={selected.id} title={selected.title} content={selected.content} onDeleteItem={deleteItem} selectedBoolean={selectedBoolean} onEditItem={editItem}></SelectedNote>
+      <SelectedNote
+        id={selected.id}
+        title={selected.title}
+        content={selected.content}
+        onDeleteItem={deleteItem}
+        selectedBoolean={selectedBoolean}
+        onEditItem={editItem}
+        onEditNote={editNote}
+        onSaveEdit={saveEdit}
+      ></SelectedNote>
 
       <Note onAddItem={addItem}></Note>
 
