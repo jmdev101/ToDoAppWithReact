@@ -31,6 +31,8 @@ function App() {
 
   function editNote(e) {
     setSelected({ ...selected, [e.target.name]: e.target.value });
+    e.target.style.height = "inherit";
+    e.target.style.height = `${e.target.scrollHeight}px`;
   }
 
   function saveEdit(id) {

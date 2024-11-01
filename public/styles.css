@@ -39,7 +39,7 @@ textarea {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 100%;
   gap: 12px;
 }
 
@@ -87,4 +87,28 @@ textarea {
 
 .selected-container p {
   line-height: 2rem;
+}
+
+.edit-selected input,
+.edit-selected textarea {
+  width: 100%;
+  border: ridge 2px;
+  padding: 5px;
+  min-height: 5em;
+  overflow: auto;
+}
+
+.edit-icon {
+  cursor: pointer;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.title h2 {
+  margin: 0;
 }

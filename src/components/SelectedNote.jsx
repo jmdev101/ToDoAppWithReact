@@ -4,7 +4,7 @@ function SelectedNote(props) {
   return (
     <div className="selected-container">
       {props.selectedBoolean ? (
-        <div>
+        <div className="edit-selected">
           <input type="text" name="title" defaultValue={props.title} onChange={(e) => props.onEditNote(e)}></input>
           <textarea required name="content" defaultValue={props.content} onChange={(e) => props.onEditNote(e)}></textarea>
         </div>
