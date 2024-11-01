@@ -1,4 +1,6 @@
 import React from "react";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 
 function SelectedNote(props) {
   return (
@@ -18,11 +20,14 @@ function SelectedNote(props) {
       {props.content ? (
         <div>
           {props.selectedBoolean ? (
-            <button onClick={() => props.onSaveEdit(props.id)}>Save</button>
+            <div>
+              <button onClick={() => props.onCloseEdit()}>Cancel</button>
+              <button onClick={() => props.onSaveEdit(props.id)}>Save</button>
+            </div>
           ) : (
             <div>
-              <button onClick={() => props.onEditItem()}>Edit</button>
-              <button onClick={() => props.onDeleteItem(props.id)}>Delete</button>
+              <EditOutlinedIcon onClick={() => props.onEditItem()} />
+              <DeleteOutlinedIcon onClick={() => props.onDeleteItem(props.id)} />
             </div>
           )}
         </div>

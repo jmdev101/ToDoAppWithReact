@@ -29,6 +29,10 @@ function App() {
     setSelectedBoolean(true);
   }
 
+  function closeEdit() {
+    setSelectedBoolean(false);
+  }
+
   function editNote(e) {
     setSelected({ ...selected, [e.target.name]: e.target.value });
     e.target.style.height = "inherit";
@@ -53,6 +57,7 @@ function App() {
         onEditItem={editItem}
         onEditNote={editNote}
         onSaveEdit={saveEdit}
+        onCloseEdit={closeEdit}
       ></SelectedNote>
 
       <Note onAddItem={addItem}></Note>
