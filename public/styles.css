@@ -93,6 +93,8 @@ textarea {
   word-wrap: break-word;
   padding: 0 20px;
   border-left: 1px solid black;
+  display: block;
+  overflow: auto;
   height: calc(100vh - 37px);
 }
 
@@ -142,37 +144,43 @@ textarea {
   color: #fad240;
 }
 
-.buttons {
+.buttons,
+.edit-content {
   display: flex;
   justify-content: flex-end;
   gap: 12px;
 }
 
-.buttons button {
+.buttons button,
+.edit-content button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   font-size: 16px;
 }
 
-.buttons button {
+.buttons button,
+.edit-content button {
   cursor: pointer;
 }
 
-.buttons button:nth-child(1) {
+.buttons button:nth-child(1),
+.edit-content button:nth-child(1) {
   background-color: white;
   color: #8c8c8c;
 }
 
-.buttons button:nth-child(2) {
+.buttons button:nth-child(2),
+.edit-content button:nth-child(2) {
   background-color: #fad240;
   color: white;
 }
 
-.buttons button:nth-child(1):hover {
+.buttons button:nth-child(1):hover .edit-content button:nth-child(1):hover {
   color: #464646;
 }
 
-.buttons button:nth-child(2):hover {
+.buttons button:nth-child(2):hover,
+.edit-content button:nth-child(2):hover {
   background-color: #ffc800;
 }

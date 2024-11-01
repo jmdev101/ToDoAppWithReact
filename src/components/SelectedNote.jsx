@@ -20,7 +20,7 @@ function SelectedNote(props) {
       {props.content ? (
         <div>
           {props.selectedBoolean ? (
-            <div>
+            <div className="edit-content">
               <button onClick={() => props.onCloseEdit()}>Cancel</button>
               <button onClick={() => props.onSaveEdit(props.id)}>Save</button>
             </div>
