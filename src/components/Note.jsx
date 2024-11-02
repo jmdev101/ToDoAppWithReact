@@ -57,7 +57,7 @@ function Note(props) {
               <button onClick={() => handleClose()} type="button">
                 Cancel
               </button>
-              <button onClick={() => handleClose()} type="submit">
+              <button onClick={note.content ? () => handleClose() : null} type="submit">
                 Add
               </button>
             </div>

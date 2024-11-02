@@ -184,3 +184,10 @@ textarea {
 .edit-content button:nth-child(2):hover {
   background-color: #ffc800;
 }
+
+#menu-item {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  padding: 10px 20px;
+}
