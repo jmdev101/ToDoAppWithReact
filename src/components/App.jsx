@@ -48,23 +48,25 @@ function App() {
     <div className="main-container">
       <Header></Header>
 
-      <SelectedNote
-        id={selected.id}
-        title={selected.title}
-        content={selected.content}
-        onDeleteItem={deleteItem}
-        selectedBoolean={selectedBoolean}
-        onEditItem={editItem}
-        onEditNote={editNote}
-        onSaveEdit={saveEdit}
-        onCloseEdit={closeEdit}
-      ></SelectedNote>
+      <div className="mobile-view">
+        <SelectedNote
+          id={selected.id}
+          title={selected.title}
+          content={selected.content}
+          onDeleteItem={deleteItem}
+          selectedBoolean={selectedBoolean}
+          onEditItem={editItem}
+          onEditNote={editNote}
+          onSaveEdit={saveEdit}
+          onCloseEdit={closeEdit}
+        ></SelectedNote>
 
-      <Note onAddItem={addItem}></Note>
+        <Note onAddItem={addItem}></Note>
 
-      {listItems.map((listItem, index) => {
-        return <List key={index} id={index} title={listItem.title} content={listItem.content} onSelectItem={selectItem} selectedId={selected.id}></List>;
-      })}
+        {listItems.map((listItem, index) => {
+          return <List key={index} id={index} title={listItem.title} content={listItem.content} onSelectItem={selectItem} selectedId={selected.id}></List>;
+        })}
+      </div>
 
       <Footer></Footer>
     </div>
